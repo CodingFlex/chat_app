@@ -5,8 +5,11 @@ import 'package:flutter_svg/flutter_svg.dart';
 import '../screens/directmessage.dart';
 
 class CustomCard extends StatelessWidget {
-  const CustomCard({Key? key, required this.chatModel}) : super(key: key);
+  const CustomCard(
+      {Key? key, required this.chatModel, required this.sourcechat})
+      : super(key: key);
   final ChatModel chatModel;
+  final ChatModel sourcechat;
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -16,6 +19,7 @@ class CustomCard extends StatelessWidget {
             MaterialPageRoute(
               builder: (context) => DirectMessage(
                 chatModel: chatModel,
+                sourcechat: sourcechat,
               ),
             ));
       }),
@@ -23,37 +27,16 @@ class CustomCard extends StatelessWidget {
         children: [
           ListTile(
             leading: CircleAvatar(
-              radius: 30,
-              child: SvgPicture.asset(
-                chatModel.isGroup
-                    ? "assets/svgs/groups.svg"
-                    : "assets/svgs/person.svg",
-                color: Colors.white,
-                height: 33,
-                width: 33,
-              ),
-              backgroundColor: Colors.blueGrey,
+              radius: 25,
+              backgroundImage: AssetImage(chatModel.imageUrl),
             ),
             title: Text(
               chatModel.name,
               style: TextStyle(
-                fontSize: 16,
+                fontSize: 15,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            subtitle: Row(
-              children: [
-                Icon(Icons.done_all),
-                SizedBox(width: 3),
-                Text(
-                  chatModel.currentMessage,
-                  style: TextStyle(
-                    fontSize: 13,
-                  ),
-                ),
-              ],
-            ),
-            trailing: Text(chatModel.time),
           ),
           Padding(
             padding: const EdgeInsets.only(right: 20, left: 18),

@@ -1,5 +1,8 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:camera/camera.dart';
 import 'package:chat_app/screens/camerascreen.dart';
+import 'package:chat_app/screens/logindemo.dart';
 import 'package:chat_app/screens/roomshome.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +24,7 @@ class MyApp extends StatelessWidget {
           primaryColor: const Color(0xFF075E54),
           colorScheme:
               ColorScheme.fromSwatch().copyWith(secondary: Color(0xFF128C7E))),
-      home: RoomsHome(),
+      home: LoginDemo(),
       debugShowCheckedModeBanner: false,
     );
   }

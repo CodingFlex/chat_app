@@ -3,13 +3,15 @@ class ChatModel {
   String icon;
   bool isGroup;
   String time;
-  String currentMessage;
+  String imageUrl;
 
-  ChatModel({
-    required this.name,
-    required this.icon,
-    required this.isGroup,
-    required this.time,
-    required this.currentMessage,
-  });
+  int id;
+
+  ChatModel(
+      {required this.name,
+      required this.icon,
+      required this.isGroup,
+      required this.time,
+      required this.id,
+      required this.imageUrl});
 }

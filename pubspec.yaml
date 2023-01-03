@@ -43,6 +43,7 @@ dependencies:
   path_provider: ^2.0.11
   path:
   video_player: ^2.4.10
+  socket_io_client: ^2.0.0
 
 dev_dependencies:
   flutter_test:
@@ -68,8 +69,14 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - assets/
     - assets/svgs/groups.svg
     - assets/svgs/person.svg
+    - assets/images/logos/UniXpd.png
+    - assets/images/logos/UniXpl.png
+    - assets/images/logos/Xpd.png
+    - assets/images/logos/Xpl.png
+    - assets/images/Profilepictures/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
